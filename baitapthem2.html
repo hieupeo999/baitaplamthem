@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2><i id="bai2"></i></h2>
+<body>
+
+<script>
+    function isSoNguyenTo(number) {
+        let check = true;
+        if (number < 2) {
+            check = false
+        } else {
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        return check;
+    }
+
+    let count = 0;
+    let sum = 0;
+    for (let i = 0; ; i++) {
+        let check = isSoNguyenTo(i)
+        if (check === true) {
+            count++
+            sum += i;
+        }
+        if (count === 25) {
+            break;
+        }
+    }
+
+    document.getElementById("bai2").innerHTML = sum
+
+</script>
+</body>
+</html>
